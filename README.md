@@ -27,6 +27,28 @@ Notes:<br />
 <br />&nbsp;&nbsp;&nbsp;*(e.g. /system scheduler add interval=5m name=ddns-update on-event="/system script run ddns-update")*<br />
 <br />
 
+# ✅ Timestamp Comment in Cloudflare Records
+
+This fork adds automatic Cloudflare record comments on WAN‑IP update, e.g.:
+
+```
+Updated at 2025-11-04 22:15:00 from MikroTik
+```
+
+### Example screenshot
+
+![Cloudflare DNS record comment](DNS_record_comment.png)
+
+### Toggle Comment Feature
+
+```rsc
+# [default: false] disable including a timestamp comment in Cloudflare UI when updating the DNS record
+:local DisableRecordComment false
+```
+
+Set to `true` to disable comment creation.
+
+
 ## Creating a Cloudflare API Auth/Key **Token** (`AuthToken`)
 
 To create the Cloudflare AuthKey/Token (`AuthToken`) in the Cloudflare dashboard, follow these steps:
